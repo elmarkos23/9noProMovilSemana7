@@ -20,9 +20,13 @@ namespace App1
     {
       InitializeComponent();
       con = DependencyService.Get<DataBase>().GetConnection();
+     
+    }
+    protected override void OnAppearing()
+    {
+      base.OnAppearing();
       consultar();
     }
-
     private async void consultar()
     {
       var registros = await con.Table<Models.Estudiante>().ToListAsync();
@@ -32,7 +36,18 @@ namespace App1
 
     private void lvEstudiantes_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
+      var obj = (Models.Estudiante)e.SelectedItem;
+      var item = obj.Id.ToString();
+      int id = Convert.ToInt32(item);
+      try
+      {
+        Navigation.PushAsync(new Elemento(id));
+      }
+      catch (Exception ex)
+      {
 
+        throw;
+      }
     }
   }
 }

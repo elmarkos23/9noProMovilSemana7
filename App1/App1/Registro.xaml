@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1.Registro">
+             x:Class="App1.Registro"
+             Title="Registro">
     <ContentPage.Content>
         <StackLayout Padding="20" Spacing="30">
       <Entry x:Name="txtNombre" Placeholder="Ingrese Nombre"/>
       <Entry x:Name="txtUsuario" Placeholder="Ingrese Usuario"/>
-      <Entry x:Name="txtContrasenia" Placeholder="INgrese contraseña" IsPassword="True"/>
+      <Entry x:Name="txtContrasenia" Placeholder="Ingrese contraseña" IsPassword="True"/>
       <Button x:Name="btnAgregar" Text="Agregar" Clicked="btnAgregar_Clicked"/>
     </StackLayout>
     </ContentPage.Content>
